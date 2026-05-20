@@ -343,54 +343,60 @@
             line-height: 1.8;
         }
 
-        /* --- SEÇÃO: ARTISTAS --- */
-        .artistas-grid {
+        /* --- SEÇÃO: ARTISTAS (NOVO LAYOUT) --- */
+        .artistas-categorias-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
-        .artista-card {
+        .categoria-card {
             background: #2a1f17;
             border: 1px solid #5a4a35;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.25s ease;
+            border-radius: 12px;
+            padding: 24px 20px;
         }
 
-        .artista-foto-placeholder {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background: linear-gradient(135deg, #3a2f25 0%, #1f1812 100%);
+        .categoria-titulo {
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            color: #c9a961;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(201,169,97,0.2);
+            padding-bottom: 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-family: 'Anton', sans-serif;
-            font-size: 32px;
-            color: #c9a961;
-        }
-
-        .artista-info {
-            padding: 12px 14px;
-            text-align: center;
-        }
-
-        .artista-info h4 {
-            font-family: 'Anton', sans-serif;
-            font-size: 14px;
-            color: var(--text-title);
-            margin-bottom: 2px;
+            gap: 8px;
             font-weight: 400;
         }
 
-        .artista-info span {
+        .categoria-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .categoria-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
             font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: #c9a961;
-            opacity: 0.7;
-            display: block;
+            font-size: 15px;
+            color: #f5e6c8;
+            line-height: 1.4;
+        }
+
+        .categoria-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .categoria-check {
+            color: #2EC56F;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
         /* --- SEÇÃO 4: COMO RECEBE --- */
@@ -757,6 +763,126 @@
             line-height: 1.4;
         }
 
+        /* --- NOVA SEÇÃO: ESTILOS DO MODÃO --- */
+        .estilos-section {
+            background-color: #1a1410;
+            padding: 56px 0;
+        }
+
+        .estilos-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.5px;
+            font-style: italic;
+        }
+
+        .estilos-title .t-viagem { color: #f5e6c8; font-style: normal; }
+        .estilos-title .t-nostalgica { color: #c9a961; font-style: italic; }
+        .estilos-title .t-raizes { color: #f5e6c8; font-style: normal; }
+
+        .estilos-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #E85D1F 0%, #FFA01F 100%);
+            margin: 12px auto 20px;
+        }
+
+        .estilos-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #b5a890;
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 36px;
+            line-height: 1.6;
+        }
+
+        .estilos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 0 16px;
+        }
+
+        .estilo-card {
+            aspect-ratio: 1/1;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid #5a4a35;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        
+        .estilo-card:nth-child(5) {
+            grid-column: span 2;
+        }
+
+        .estilo-img-placeholder {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #3a2f25 0%, #1f1812 50%, #2a1f17 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placeholder-t1 {
+            font-size: 14px;
+            opacity: 0.4;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .placeholder-t2 {
+            font-size: 11px;
+            opacity: 0.3;
+            font-family: 'Inter', sans-serif;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .estilo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .estilo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .estilo-name {
+            position: absolute;
+            bottom: 16px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            padding: 0 12px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            margin: 0;
+        }
+
         /* --- DESKTOP QUERIES --- */
         @media (min-width: 768px) {
             body {
@@ -811,18 +937,45 @@
             .audio-card {
                 min-width: calc(33.333% - 11px);
             }
-            .artistas-grid {
+            .artistas-categorias-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 16px;
+                max-width: 1200px;
+                margin: 0 auto;
             }
 
-            .artista-card:hover {
-                transform: translateY(-3px);
+            .estilos-section {
+                padding: 80px 0;
+            }
+
+            .estilos-title {
+                font-size: 38px;
+            }
+
+            .estilos-subtitle {
+                font-size: 15px;
+            }
+
+            .estilos-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 16px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+
+            .estilo-card:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .estilo-card:hover {
+                transform: translateY(-4px) scale(1.02);
                 border-color: #c9a961;
+                box-shadow: 0 12px 28px rgba(0,0,0,0.4);
             }
 
-            .artista-info h4 {
-                font-size: 16px;
+            .estilo-name {
+                font-size: 22px;
             }
 
             .passos-list {
@@ -890,6 +1043,74 @@
                 <div class="hero-badges-row">
                     <span style="color: #2EC56F; font-weight: 700;">✓ Garantia de 7 dias</span> &middot; <span>✓ Acesso no Zap e Email</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: ESTILOS DO MODÃO -->
+    <section class="estilos-section">
+        <h2 class="estilos-title">
+            <span class="t-viagem">UMA VIAGEM</span> 
+            <span class="t-nostalgica">NOSTÁLGICA</span> 
+            <span class="t-raizes">ÀS RAÍZES</span>
+        </h2>
+        <div class="estilos-line"></div>
+        <p class="estilos-subtitle">Nossa biblioteca é organizada meticulosamente para que você encontre o clima perfeito em segundos, sentindo a emoção do interior.</p>
+
+        <div class="estilos-grid">
+            <!-- Card 1 -->
+            <div class="estilo-card" data-id="img-modao-antigo" aria-label="Imagem do estilo Modão Antigo">
+                <div class="estilo-img-placeholder">
+                    <span class="placeholder-t1">📷 IMAGEM</span>
+                    <span class="placeholder-t2">modao-antigo.jpg<br>600x600px</span>
+                </div>
+                <!-- <img src="" alt="Modão Antigo" class="estilo-img" style="display: none;"> -->
+                <div class="estilo-overlay"></div>
+                <h3 class="estilo-name">MODÃO ANTIGO</h3>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="estilo-card" data-id="img-sertanejo-classico" aria-label="Imagem do estilo Sertanejo Clássico">
+                <div class="estilo-img-placeholder">
+                    <span class="placeholder-t1">📷 IMAGEM</span>
+                    <span class="placeholder-t2">sertanejo-classico.jpg<br>600x600px</span>
+                </div>
+                <!-- <img src="" alt="Sertanejo Clássico" class="estilo-img" style="display: none;"> -->
+                <div class="estilo-overlay"></div>
+                <h3 class="estilo-name">SERTANEJO CLÁSSICO</h3>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="estilo-card" data-id="img-sertanejo-raiz" aria-label="Imagem do estilo Sertanejo Raiz">
+                <div class="estilo-img-placeholder">
+                    <span class="placeholder-t1">📷 IMAGEM</span>
+                    <span class="placeholder-t2">sertanejo-raiz.jpg<br>600x600px</span>
+                </div>
+                <!-- <img src="" alt="Sertanejo Raiz" class="estilo-img" style="display: none;"> -->
+                <div class="estilo-overlay"></div>
+                <h3 class="estilo-name">SERTANEJO RAIZ</h3>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="estilo-card" data-id="img-modao-apaixonado" aria-label="Imagem do estilo Modão Apaixonado">
+                <div class="estilo-img-placeholder">
+                    <span class="placeholder-t1">📷 IMAGEM</span>
+                    <span class="placeholder-t2">modao-apaixonado.jpg<br>600x600px</span>
+                </div>
+                <!-- <img src="" alt="Modão Apaixonado" class="estilo-img" style="display: none;"> -->
+                <div class="estilo-overlay"></div>
+                <h3 class="estilo-name">MODÃO APAIXONADO</h3>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="estilo-card" data-id="img-icones-sertao" aria-label="Imagem do estilo Ícones do Sertão">
+                <div class="estilo-img-placeholder">
+                    <span class="placeholder-t1">📷 IMAGEM</span>
+                    <span class="placeholder-t2">icones-sertao.jpg<br>600x600px</span>
+                </div>
+                <!-- <img src="" alt="Ícones do Sertão" class="estilo-img" style="display: none;"> -->
+                <div class="estilo-overlay"></div>
+                <h3 class="estilo-name">ÍCONES DO SERTÃO</h3>
             </div>
         </div>
     </section>
@@ -1011,28 +1232,61 @@
         <h2 style="text-align: center; margin-bottom: 12px;">OS DONOS DO MODÃO ESTÃO TODOS AQUI</h2>
         <p class="section-subtitle" style="text-align: center; margin-bottom: 32px;">Mais de 50 artistas que marcaram gerações inteiras</p>
 
-        <div class="artistas-grid">
-            <div class="artista-card"><div class="artista-foto-placeholder">T&T</div><div class="artista-info"><h4>Tonico & Tinoco</h4><span>142 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">TC&P</div><div class="artista-info"><h4>Tião Carreiro & Pardinho</h4><span>134 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">M&JR</div><div class="artista-info"><h4>Milionário & José Rico</h4><span>156 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">C&X</div><div class="artista-info"><h4>Chitãozinho & Xororó</h4><span>89 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">ZD&L</div><div class="artista-info"><h4>Zezé Di Camargo & Luciano</h4><span>142 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">L&L</div><div class="artista-info"><h4>Leandro & Leonardo</h4><span>115 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">JM&M</div><div class="artista-info"><h4>João Mineiro & Marciano</h4><span>110 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">C&R</div><div class="artista-info"><h4>Chrystian & Ralf</h4><span>118 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">M&M</div><div class="artista-info"><h4>Matogrosso & Mathias</h4><span>105 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">B&M</div><div class="artista-info"><h4>Bruno & Marrone</h4><span>140 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">TPD</div><div class="artista-info"><h4>Trio Parada Dura</h4><span>98 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">SR</div><div class="artista-info"><h4>Sérgio Reis</h4><span>96 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">AS</div><div class="artista-info"><h4>Almir Sater</h4><span>82 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">T&S</div><div class="artista-info"><h4>Teodoro & Sampaio</h4><span>122 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">G&G</div><div class="artista-info"><h4>Gino & Geno</h4><span>95 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">DP&P</div><div class="artista-info"><h4>Di Paullo & Paulino</h4><span>135 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">R&S</div><div class="artista-info"><h4>Rionegro & Solimões</h4><span>88 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">C&P</div><div class="artista-info"><h4>Cezar & Paulinho</h4><span>112 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">R&R</div><div class="artista-info"><h4>Rick & Renner</h4><span>132 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">G&G</div><div class="artista-info"><h4>Gian & Giovani</h4><span>95 músicas</span></div></div>
-            <div class="artista-card"><div class="artista-foto-placeholder">JP&D</div><div class="artista-info"><h4>João Paulo & Daniel</h4><span>108 músicas</span></div></div>
+        <div class="artistas-categorias-grid">
+            <!-- CARD 1 -->
+            <div class="categoria-card">
+                <div class="categoria-titulo">🎵 LENDAS DO RAIZ</div>
+                <ul class="categoria-lista">
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Tonico & Tinoco</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Tião Carreiro & Pardinho</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Milionário & José Rico</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Liu & Léu</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Zé Carreiro & Carreirinho</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Pedro Bento & Zé da Estrada</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Cascatinha & Inhana</li>
+                </ul>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="categoria-card">
+                <div class="categoria-titulo">🎸 CLÁSSICOS</div>
+                <ul class="categoria-lista">
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Chitãozinho & Xororó</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Zezé Di Camargo & Luciano</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Leandro & Leonardo</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> João Mineiro & Marciano</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Matogrosso & Mathias</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Chrystian & Ralf</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Bruno & Marrone</li>
+                </ul>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="categoria-card">
+                <div class="categoria-titulo">🎤 VOZES MARCANTES</div>
+                <ul class="categoria-lista">
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Sérgio Reis</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Almir Sater</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Renato Teixeira</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Trio Parada Dura</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Duduca & Dalvan</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Belmonte & Amaraí</li>
+                </ul>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="categoria-card">
+                <div class="categoria-titulo">🎵 OUTROS NOMES</div>
+                <ul class="categoria-lista">
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Irmãs Galvão</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Teixeirinha</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Gino & Geno</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Cezar & Paulinho</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Vieira & Vieirinha</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Rionegro & Solimões</li>
+                    <li class="categoria-item"><span class="categoria-check">✓</span> Rick & Renner</li>
+                </ul>
+            </div>
         </div>
 
         <div style="margin-top: 32px;">
