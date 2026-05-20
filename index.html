@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modão da Estrada - 3.000 Clássicos Sertanejos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #1a1410;
+            --bg-card: #2a1f17;
+            --cta-color: #c9a961;
+            --text-title: #f5e6c8;
+            --text-body: #b5a890;
+            --border-color: #5a4a35;
+            --whatsapp-green: #25D366;
+            
+            --padding-mobile: 20px;
+            --padding-desktop: 24px;
+            --spacing-mobile: 56px;
+            --spacing-desktop: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Anton', sans-serif;
+            color: var(--text-title);
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+        }
+
+        .container {
+            padding-left: var(--padding-mobile);
+            padding-right: var(--padding-mobile);
+            width: 100%;
+        }
+
+        section {
+            padding: var(--spacing-mobile) 0;
+        }
+
+        /* --- CTA BUTTON --- */
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            background: linear-gradient(90deg, #E85D1F 0%, #FFA01F 100%);
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: none;
+            text-transform: none;
+            letter-spacing: 0;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(232, 93, 31, 0.35);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 93, 31, 0.45);
+        }
+
+        /* --- ELEMENTOS FIXOS --- */
+        .urgency-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--cta-color);
+            color: var(--bg-main);
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--whatsapp-green);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+
+        .whatsapp-float svg {
+            fill: white;
+            width: 32px;
+            height: 32px;
+        }
+
+        /* --- SEÇÃO 1: HERO --- */
+        .hero {
+            position: relative;
+            margin-top: 36px; /* Urgency bar */
+            padding: 20px 16px 36px;
+            background-image: linear-gradient(to bottom, rgba(26, 20, 16, 0.85) 0%, rgba(26, 20, 16, 0.92) 100%), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 20px;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--cta-color);
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            width: auto;
+            background: linear-gradient(90deg, #E85D1F 0%, #FFA01F 100%);
+            color: #FFFFFF;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            font-weight: 400;
+            color: #f5e6c8;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #b5a890;
+            opacity: 0.9;
+            max-width: 92%;
+            margin: 0 auto 28px auto;
+            text-align: center;
+        }
+
+        .hero-cta {
+            white-space: nowrap;
+            font-size: 15px;
+            padding: 16px 28px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 14px auto;
+        }
+
+        .hero-badges-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 0;
+            font-size: 13px;
+            color: var(--text-body);
+        }
+
+        /* --- SEÇÃO 2: VANTAGENS --- */
+        .vantagens-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .vantagem-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .vantagem-icon {
+            font-size: 32px;
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .vantagem-text h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-title);
+            margin-bottom: 4px;
+        }
+
+        .vantagem-text p {
+            font-size: 14px;
+        }
+
+        /* --- SEÇÃO 3: PRÉVIA DE ÁUDIO --- */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            padding-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+
+        .audio-card {
+            min-width: 80%;
+            scroll-snap-align: center;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .audio-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .audio-card-content {
+            padding: 16px;
+        }
+
+        .audio-card-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-title);
+            margin-bottom: 12px;
+        }
+
+        .custom-player {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        .play-btn {
+            background: var(--cta-color);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--bg-main);
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: var(--cta-color);
+            width: 0%;
+            border-radius: 2px;
+        }
+
+        .artists-list {
+            font-size: 13px;
+            color: var(--text-body);
+            text-align: center;
+            margin: 24px 0;
+            line-height: 1.8;
+        }
+
+        /* --- SEÇÃO: ARTISTAS --- */
+        .artistas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .artista-card {
+            background: #2a1f17;
+            border: 1px solid #5a4a35;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+        }
+
+        .artista-foto-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #3a2f25 0%, #1f1812 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
+            color: #c9a961;
+        }
+
+        .artista-info {
+            padding: 12px 14px;
+            text-align: center;
+        }
+
+        .artista-info h4 {
+            font-family: 'Anton', sans-serif;
+            font-size: 14px;
+            color: var(--text-title);
+            margin-bottom: 2px;
+            font-weight: 400;
+        }
+
+        .artista-info span {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #c9a961;
+            opacity: 0.7;
+            display: block;
+        }
+
+        /* --- SEÇÃO 4: COMO RECEBE --- */
+        .passos-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .passo-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .passo-numero {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            line-height: 1;
+            color: var(--cta-color);
+            opacity: 0.8;
+        }
+
+        .passo-text h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-title);
+            margin-bottom: 4px;
+        }
+
+        /* --- SEÇÃO 5: DEPOIMENTOS --- */
+        .depoimentos-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            padding-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .depoimentos-carousel::-webkit-scrollbar { display: none; }
+
+        .depoimento-card {
+            min-width: 85%;
+            scroll-snap-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .depoimento-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .depoimento-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-title);
+            font-weight: bold;
+        }
+
+        .depoimento-info h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-title);
+            line-height: 1.2;
+        }
+
+        .depoimento-info span {
+            font-size: 12px;
+            color: var(--text-body);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .depoimento-text {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .social-proof {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-title);
+            margin: 16px 0 24px;
+        }
+
+        /* --- SEÇÃO 6: OFERTA --- */
+        .oferta-card {
+            background: var(--bg-card);
+            border: 2px solid var(--cta-color);
+            border-radius: 12px;
+            padding: 24px 20px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .oferta-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--cta-color);
+            color: var(--bg-main);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .oferta-card h3 {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-title);
+            margin-bottom: 20px;
+        }
+
+        .oferta-bullets {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .oferta-bullets li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .preco-box {
+            text-align: center;
+            margin-bottom: 24px;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .preco-antigo {
+            font-size: 16px;
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .preco-atual {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-title);
+            line-height: 1;
+            margin: 4px 0;
+        }
+
+        .preco-sub {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .seguro-text {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-body);
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* --- SEÇÃO 7: GARANTIA --- */
+        .garantia-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px 20px;
+        }
+
+        .garantia-selo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .garantia-box h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 12px;
+        }
+
+        /* --- SEÇÃO 8: FAQ --- */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        .faq-pergunta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-title);
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .faq-icone {
+            color: var(--cta-color);
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 14px;
+            color: var(--text-body);
+            padding-top: 0;
+        }
+
+        .faq-item.active .faq-resposta {
+            max-height: 150px;
+            padding-top: 12px;
+        }
+
+        .faq-item.active .faq-icone {
+            transform: rotate(45deg);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background: #110d0a;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #887a64;
+        }
+
+        footer .logo {
+            font-size: 20px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: #887a64;
+            text-decoration: underline;
+        }
+
+        /* --- POPUPS --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background: var(--bg-card);
+            border: 2px solid var(--cta-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .popup-content h3 {
+            font-size: 24px;
+            color: var(--cta-color);
+            margin-bottom: 12px;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .btn-recusar {
+            display: block;
+            margin-top: 16px;
+            color: var(--text-body);
+            font-size: 12px;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .sales-notification {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transform: translateX(-150%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 98;
+            max-width: calc(100vw - 40px);
+        }
+
+        .sales-notification.show {
+            transform: translateX(0);
+        }
+
+        .sales-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #5a4a35;
+        }
+
+        .sales-text {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* --- DESKTOP QUERIES --- */
+        @media (min-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .container {
+                padding-left: var(--padding-desktop);
+                padding-right: var(--padding-desktop);
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            section {
+                padding: var(--spacing-desktop) 0;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+                max-width: 600px;
+            }
+
+            .hero-content {
+                align-items: flex-start;
+            }
+
+            .cta-button.hero-cta {
+                margin: 0;
+            }
+
+            .hero-badges-row {
+                justify-content: flex-start;
+            }
+
+            .vantagens-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .vantagem-card {
+                width: calc(33.333% - 11px);
+            }
+
+            .audio-card {
+                min-width: calc(33.333% - 11px);
+            }
+            .artistas-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+
+            .artista-card:hover {
+                transform: translateY(-3px);
+                border-color: #c9a961;
+            }
+
+            .artista-info h4 {
+                font-size: 16px;
+            }
+
+            .passos-list {
+                flex-direction: row;
+            }
+
+            .passo-item {
+                flex: 1;
+            }
+
+            .depoimentos-carousel {
+                flex-wrap: wrap;
+                overflow: visible;
+            }
+
+            .depoimento-card {
+                min-width: 0;
+                width: calc(33.333% - 11px);
+            }
+
+            .oferta-card {
+                max-width: 500px;
+                margin: 20px auto 0;
+            }
+
+            .garantia-box {
+                flex-direction: row;
+                text-align: left;
+                padding: 40px;
+            }
+
+            .faq-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        🔥 OFERTA RELÂMPAGO — TERMINA EM <span id="countdown" style="margin-left: 4px;">23:59:47</span>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- SEÇÃO 1: HERO -->
+    <section class="hero">
+        <div class="container" style="display: flex; flex-direction: column;">
+            <div class="hero-header">
+                <div class="logo">MODÃO DA ESTRADA</div>
+            </div>
+            
+            <div class="hero-content">
+                <span class="badge">🎧 MODÕES PRA ESTRADA</span>
+                <h1>A estrada é longa, o modão é eterno. 3.000 clássicos pra atravessar o Brasil.</h1>
+                <p>Pendrive carregado e pronto. Sem internet, sem propaganda, sem chiado de rádio. Só você, a estrada e a viola dos grandes.</p>
+                
+                <a href="#oferta" class="cta-button hero-cta">QUERO MEU ACERVO AGORA</a>
+                
+                <div class="hero-badges-row">
+                    <span style="color: #2EC56F; font-weight: 700;">✓ Garantia de 7 dias</span> &middot; <span>✓ Acesso no Zap e Email</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: VANTAGENS -->
+    <section class="container">
+        <h2>POR QUE ESSE PENDRIVE É DIFERENTE</h2>
+        <p class="section-subtitle">Tudo pronto pra você plugar e tocar</p>
+
+        <div class="vantagens-list">
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>FUNCIONA OFFLINE</h3>
+                    <p>Toca no meio do mato, na estrada vazia, sem precisar de sinal</p>
+                </div>
+            </div>
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>ZERO PROPAGANDA</h3>
+                    <p>Sem DJ falando no meio, sem comercial cortando música</p>
+                </div>
+            </div>
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>SEM MENSALIDADE</h3>
+                    <p>Paga uma vez só. Acesso seu pra sempre</p>
+                </div>
+            </div>
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>ORGANIZADO POR PASTA</h3>
+                    <p>Por artista e estilo. É só copiar pro pendrive e usar</p>
+                </div>
+            </div>
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>COMPATÍVEL COM TUDO</h3>
+                    <p>Carro, caminhão, caminhonete, TV, multimídia, JBL</p>
+                </div>
+            </div>
+            <div class="vantagem-card">
+                <div class="vantagem-text">
+                    <h3>ACESSO IMEDIATO</h3>
+                    <p>Recebe o link no WhatsApp e e-mail na hora que paga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: PRÉVIA DE ÁUDIO -->
+    <section style="background: var(--bg-card);">
+        <div class="container">
+            <h2>ESCUTA UMA AMOSTRA AGORA</h2>
+            <p class="section-subtitle">Aperta o play e sente a qualidade</p>
+
+            <div class="carousel-container">
+                <div class="audio-card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tião Carreiro" loading="lazy">
+                    <div class="audio-card-content">
+                        <h3>Tião Carreiro & Pardinho</h3>
+                        <div class="custom-player">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-card">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Milionário e José Rico" loading="lazy">
+                    <div class="audio-card-content">
+                        <h3>Milionário & José Rico</h3>
+                        <div class="custom-player">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-card">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5f5f9af?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chitãozinho e Xororó" loading="lazy">
+                    <div class="audio-card-content">
+                        <h3>Chitãozinho & Xororó</h3>
+                        <div class="custom-player">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-card">
+                    <img src="https://images.unsplash.com/photo-1516280440502-60477145de70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tonico e Tinoco" loading="lazy">
+                    <div class="audio-card-content">
+                        <h3>Tonico & Tinoco</h3>
+                        <div class="custom-player">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-card">
+                    <img src="https://images.unsplash.com/photo-1485579149621-3123dd979886?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bruno e Marrone" loading="lazy">
+                    <div class="audio-card-content">
+                        <h3>Bruno & Marrone</h3>
+                        <div class="custom-player">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artists-list">
+                Tonico & Tinoco &middot; Tião Carreiro &middot; Milionário & José Rico &middot; Chitãozinho & Xororó &middot; Zezé Di Camargo &middot; Leandro & Leonardo &middot; Bruno & Marrone &middot; e mais 40 artistas
+            </div>
+
+            <a href="#oferta" class="cta-button">QUERO O ACERVO COMPLETO</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: ARTISTAS -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 12px;">OS DONOS DO MODÃO ESTÃO TODOS AQUI</h2>
+        <p class="section-subtitle" style="text-align: center; margin-bottom: 32px;">Mais de 50 artistas que marcaram gerações inteiras</p>
+
+        <div class="artistas-grid">
+            <div class="artista-card"><div class="artista-foto-placeholder">T&T</div><div class="artista-info"><h4>Tonico & Tinoco</h4><span>142 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">TC&P</div><div class="artista-info"><h4>Tião Carreiro & Pardinho</h4><span>134 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">M&JR</div><div class="artista-info"><h4>Milionário & José Rico</h4><span>156 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">C&X</div><div class="artista-info"><h4>Chitãozinho & Xororó</h4><span>89 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">ZD&L</div><div class="artista-info"><h4>Zezé Di Camargo & Luciano</h4><span>142 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">L&L</div><div class="artista-info"><h4>Leandro & Leonardo</h4><span>115 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">JM&M</div><div class="artista-info"><h4>João Mineiro & Marciano</h4><span>110 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">C&R</div><div class="artista-info"><h4>Chrystian & Ralf</h4><span>118 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">M&M</div><div class="artista-info"><h4>Matogrosso & Mathias</h4><span>105 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">B&M</div><div class="artista-info"><h4>Bruno & Marrone</h4><span>140 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">TPD</div><div class="artista-info"><h4>Trio Parada Dura</h4><span>98 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">SR</div><div class="artista-info"><h4>Sérgio Reis</h4><span>96 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">AS</div><div class="artista-info"><h4>Almir Sater</h4><span>82 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">T&S</div><div class="artista-info"><h4>Teodoro & Sampaio</h4><span>122 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">G&G</div><div class="artista-info"><h4>Gino & Geno</h4><span>95 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">DP&P</div><div class="artista-info"><h4>Di Paullo & Paulino</h4><span>135 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">R&S</div><div class="artista-info"><h4>Rionegro & Solimões</h4><span>88 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">C&P</div><div class="artista-info"><h4>Cezar & Paulinho</h4><span>112 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">R&R</div><div class="artista-info"><h4>Rick & Renner</h4><span>132 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">G&G</div><div class="artista-info"><h4>Gian & Giovani</h4><span>95 músicas</span></div></div>
+            <div class="artista-card"><div class="artista-foto-placeholder">JP&D</div><div class="artista-info"><h4>João Paulo & Daniel</h4><span>108 músicas</span></div></div>
+        </div>
+
+        <div style="margin-top: 32px;">
+            <a href="#oferta" class="cta-button" style="margin: 0 auto; max-width: 380px;">QUERO TODOS ESSES ARTISTAS</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4: COMO RECEBE -->
+    <section class="container">
+        <h2>COMO VOCÊ RECEBE SEU MODÃO</h2>
+        <p class="section-subtitle">Prático e rápido, do jeito que a gente gosta</p>
+
+        <div class="passos-list">
+            <div class="passo-item">
+                <div class="passo-numero">1</div>
+                <div class="passo-text">
+                    <h3>ESCOLHE E PAGA NO PIX</h3>
+                    <p>Clica no botão, gera o PIX em segundos. Aprovado na hora.</p>
+                </div>
+            </div>
+            <div class="passo-item">
+                <div class="passo-numero">2</div>
+                <div class="passo-text">
+                    <h3>RECEBE NO ZAP E E-MAIL</h3>
+                    <p>Em até 2 minutos chega o link. Sem espera, sem complicação.</p>
+                </div>
+            </div>
+            <div class="passo-item">
+                <div class="passo-numero">3</div>
+                <div class="passo-text">
+                    <h3>BAIXA E PLUGA NO CARRO</h3>
+                    <p>Copia pras pastas do pendrive e plugou tá tocando. Vídeo explicando incluso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 5: DEPOIMENTOS -->
+    <section style="background: var(--bg-card);">
+        <div class="container">
+            <h2>QUEM JÁ TÁ RODANDO COM O ACERVO</h2>
+            
+            <div class="depoimentos-carousel" style="margin-top: 32px;">
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <div class="depoimento-avatar">JC</div>
+                        <div class="depoimento-info">
+                            <h4>José Carlos</h4>
+                            <span>Goiânia-GO</span>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="depoimento-text">"Sou caminhoneiro, atravessei do RS até o PA só ouvindo modão. Vale demais."</p>
+                </div>
+                
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <div class="depoimento-avatar">AP</div>
+                        <div class="depoimento-info">
+                            <h4>Antônio Pereira</h4>
+                            <span>Cuiabá-MT</span>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="depoimento-text">"Coloquei na caixa de som da varanda do sítio. Minha mulher tá cantando junto agora."</p>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <div class="depoimento-avatar">ML</div>
+                        <div class="depoimento-info">
+                            <h4>Mauricio Lopes</h4>
+                            <span>Uberlândia-MG</span>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="depoimento-text">"Trabalho de Uber, cansei do Spotify cortando música. Esse pendrive me salvou."</p>
+                </div>
+            </div>
+
+            <div class="social-proof">
+                + de 5.000 pessoas já garantiram o acesso
+            </div>
+
+            <a href="#oferta" class="cta-button">GARANTIR MEU ACESSO</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 6: OFERTA -->
+    <section id="oferta" class="container">
+        <h2>ESCOLHA SEU ACESSO</h2>
+        <p class="section-subtitle">Pagamento único. Acesso vitalício.</p>
+
+        <div class="oferta-card">
+            <div class="oferta-badge">🔥 OFERTA RELÂMPAGO</div>
+            <h3>PACOTE COMPLETO MODÃO DA ESTRADA</h3>
+            
+            <ul class="oferta-bullets">
+                <li><span style="color: var(--cta-color)">✓</span> +3.000 Modões organizados por pasta</li>
+                <li><span style="color: var(--cta-color)">✓</span> Sertanejo raiz, clássicos e hits atuais</li>
+                <li><span style="color: var(--cta-color)">✓</span> Pronto pro pendrive (zip organizado)</li>
+                <li><span style="color: var(--cta-color)">✓</span> Funciona offline (sem internet)</li>
+                <li><span style="color: var(--cta-color)">✓</span> Acesso imediato no Zap e Email</li>
+                <li><span>🎁</span> BÔNUS 1: +100 Videoclipes em HD</li>
+                <li><span>🎁</span> BÔNUS 2: Pasta "Churrasco de Domingo"</li>
+                <li><span>🎁</span> BÔNUS 3: 100 Mais Tocadas nos Butecos</li>
+                <li><span>🎁</span> BÔNUS 4: Grupo VIP no WhatsApp</li>
+                <li><span>🎁</span> BÔNUS 5: Atualizações vitalícias</li>
+            </ul>
+
+            <div class="preco-box">
+                <div class="preco-antigo">De R$ 198,00</div>
+                <div class="preco-atual">R$ 19,90</div>
+                <div class="preco-sub">Pagamento único</div>
+            </div>
+
+            <a href="#" class="cta-button">QUERO O PACOTE COMPLETO</a>
+            <div class="seguro-text">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Pagamento 100% seguro via PIX
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 7: GARANTIA -->
+    <section class="container">
+        <div class="garantia-box">
+            <svg class="garantia-selo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="var(--cta-color)" fill-opacity="0.1" stroke="var(--cta-color)" stroke-width="2"/>
+                <path d="M50 15L59.5 35.5L81.5 38.5L65.5 54L69.5 76L50 65.5L30.5 76L34.5 54L18.5 38.5L40.5 35.5L50 15Z" fill="var(--cta-color)"/>
+                <text x="50" y="58" font-family="Anton" font-size="24" fill="var(--bg-main)" text-anchor="middle">7 DIAS</text>
+            </svg>
+            <div>
+                <h3>GARANTIA INCONDICIONAL DE 7 DIAS</h3>
+                <p>Você tem 7 dias pra baixar, testar no pendrive, no carro, na caixa de som. Se não curtir, devolvemos 100% do seu dinheiro. Sem perguntas, sem letra miúda.<br><br>Seu investimento está 100% protegido.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 8: FAQ -->
+    <section class="container" style="padding-bottom: 80px;">
+        <h2>DÚVIDAS FREQUENTES</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-pergunta">Como eu recebo o acesso? <span class="faq-icone">+</span></div>
+                <div class="faq-resposta">Você recebe o link no WhatsApp e no e-mail em até 2 minutos depois do pagamento aprovado.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pergunta">Funciona em qualquer carro? <span class="faq-icone">+</span></div>
+                <div class="faq-resposta">Sim. Se o som do seu carro tem entrada USB ou Bluetooth, funciona. Carro, caminhão, caminhonete, multimídia, JBL — tudo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pergunta">É mensalidade? <span class="faq-icone">+</span></div>
+                <div class="faq-resposta">Não. Pagamento único de R$ 19,90 e o acesso é vitalício. Sem assinatura, sem renovação.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pergunta">E se eu não conseguir baixar? <span class="faq-icone">+</span></div>
+                <div class="faq-resposta">Nosso suporte no WhatsApp te ajuda direto. Tem vídeo explicando passo a passo e o grupo VIP onde o pessoal se ajuda também.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <span class="logo">MODÃO DA ESTRADA</span>
+            <p>Este site não é afiliado ao Facebook/Meta. Conteúdo para fins de entretenimento e nostalgia cultural.</p>
+            <p>CNPJ: 00.000.000/0001-00 | suporte@modaodaestrada.com.br</p>
+            <div class="footer-links">
+                <a href="#">Termos</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Reembolso</a>
+            </div>
+            <p>&copy; 2026 Modão da Estrada</p>
+        </div>
+    </footer>
+
+    <!-- POPUP EXIT INTENT -->
+    <div class="popup-overlay" id="exitPopup">
+        <div class="popup-content">
+            <h3>ESPERA AÍ!</h3>
+            <p>Não saia de mãos vazias. Leve o pacote completo com todos os bônus por apenas <strong>R$ 14,90</strong> agora mesmo!</p>
+            <a href="#" class="cta-button">QUERO O DESCONTO AGORA</a>
+            <button class="btn-recusar" onclick="document.getElementById('exitPopup').style.display='none'">Não, prefiro pagar o valor normal depois</button>
+        </div>
+    </div>
+
+    <!-- SALES NOTIFICATION -->
+    <div class="sales-notification" id="salesNotification">
+        <div class="sales-img"></div>
+        <div class="sales-text">
+            <strong>João P.</strong> acabou de garantir o pacote.<br>
+            <span style="font-size: 11px; color: var(--text-body);">Há 2 minutos</span>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-pergunta').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                    faq.querySelector('.faq-icone').textContent = '+';
+                });
+
+                if (!isActive) {
+                    parent.classList.add('active');
+                    parent.querySelector('.faq-icone').textContent = '×';
+                }
+            });
+        });
+
+        // Urgency Countdown
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Exit Intent Popup
+        let popupShown = false;
+        
+        // Timeout 45s
+        setTimeout(() => {
+            if (!popupShown) {
+                document.getElementById('exitPopup').style.display = 'flex';
+                popupShown = true;
+            }
+        }, 45000);
+
+        // Fast scroll up
+        let lastScrollTop = window.scrollY;
+        window.addEventListener('scroll', () => {
+            let st = window.scrollY;
+            if (lastScrollTop - st > 100 && !popupShown && st < 500) {
+                document.getElementById('exitPopup').style.display = 'flex';
+                popupShown = true;
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+
+        // Sales Notification
+        const nomes = ["Carlos M.", "Antônio P.", "Marcos S.", "José C.", "Paulo R."];
+        let notificacoesMostradas = 0;
+        
+        function showNotification() {
+            if (notificacoesMostradas >= 4) return;
+            
+            const notif = document.getElementById('salesNotification');
+            const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+            
+            notif.querySelector('strong').textContent = nomeAleatorio;
+            notif.classList.add('show');
+            
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 6000);
+            
+            notificacoesMostradas++;
+            
+            if (notificacoesMostradas < 4) {
+                setTimeout(showNotification, 30000);
+            }
+        }
+        
+        setTimeout(showNotification, 10000); // Primeira notificação após 10s
+    </script>
+</body>
+</html>
